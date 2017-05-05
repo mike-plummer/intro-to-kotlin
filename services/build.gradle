@@ -1,0 +1,26 @@
+group 'com.objectpartners.plummer'
+version '0.1-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.1.2-2'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    }
+}
+
+apply plugin: 'kotlin'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion"
+
+    compile "org.springframework.boot:spring-boot-starter-parent:$springbootVersion"
+    compile "org.springframework.boot:spring-boot-starter-web:$springbootVersion"
+}

@@ -1,0 +1,4 @@
+rootProject.name = 'intro-to-kotlin'
+
+include 'services'
+include 'domain'
