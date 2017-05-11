@@ -2,8 +2,6 @@ group 'com.objectpartners.plummer'
 version '0.1-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.1.2-2'
-
     repositories {
         mavenCentral()
     }

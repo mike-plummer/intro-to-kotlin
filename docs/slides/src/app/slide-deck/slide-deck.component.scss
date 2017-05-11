@@ -1,0 +1,46 @@
+.reveal {
+  section {
+    img {
+      background: unset;
+      border: unset;
+      box-shadow: unset;
+    }
+  }
+
+  //h1, h2, h3, h4, h5, h6 {
+  //  font-variant: small-caps;
+  //}
+
+  pre {
+    font-size: .35em;
+    width: auto;
+
+    code {
+      max-height: 560px;
+    }
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.small-img {
+  height: 100px;
+  width: 100px;
+}
+
+.medium-img {
+  height: 200px;
+  width: 200px;
+}
