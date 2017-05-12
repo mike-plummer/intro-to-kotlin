@@ -1,0 +1,29 @@
+div.fragment
+  h4 No Checked Exceptions
+
+div.fragment
+  h4 Type Aliases
+
+  pre
+    code.lang-kotlin
+      | typealias KeyValuesMap = Map<String, List<String>>
+      |
+      | val myMap = mapOf<String, List<String>>()
+      | val notMyMap = mapOf<Int, List<Long>>()
+      |
+      | fun main(args: Array<String>) {
+      |     println(myMap is Map)              // true
+      |     println(myMap is KeyValuesMap)     // true
+      |     println(notMyMap is KeyValuesMap)  // Error due to type erasure
+      | }
+
+div.fragment
+  h4 Destructuring
+  pre
+    code.lang-kotlin
+      | data class ComplexClass(val name: String, val description: String, val address: String)
+      |
+      | val myComplexObject = ComplexClass("A", "B", "C")
+      |
+      | val (first, second, third) = myComplexObject
+      | // first = "A", second = "B", third = "C"

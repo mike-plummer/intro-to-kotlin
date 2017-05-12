@@ -1,0 +1,11 @@
+h3 Variable Declarations
+
+pre
+  code.lang-kotlin
+    | // By default a value cannot be null
+    | val readOnlyValue: String = "Read-only, non-nullable"
+    | var mutableValue: String = "Mutable, non-nullable"
+    |
+    | // Adding a question mark after the type declaration means 'this can be null'
+    | val nullableReadOnlyValue: String? = "Read-only, nullable"
+    | var nullableMutableValue: String? = "Mutable and nullable"

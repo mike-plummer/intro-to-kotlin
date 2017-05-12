@@ -1,0 +1,24 @@
+h3 Data Classes
+
+p Auto-generate equals, hashCode, toString, copy constructor, and destructuring support
+
+pre
+  code.lang-kotlin
+    | // Declare a Data class and supply default args
+    | data class MyDTO(
+    |         val first: Long = 0,
+    |         val second: Long = 2)
+    |
+    | fun main(args: Array<String>) {
+    |     val dto = MyDTO(1)          // Since there are default params I can
+    |                                 // decide to only override the first one
+    |
+    |     println( dto.toString() )   // MyDTO(readOnlyValue=1, mutableValue=2)
+    |
+    |     val copy: MyDTO = dto.copy()
+    |     println( dto === copy )     // false, not referentially equal
+    |     println( dto == copy )      // true, using generated 'equals' method
+    |
+    |     val (first, second) = dto   // Destructuring, but not quite as nice as ES2016
+    |     println( "$first, $second") // Template strings! Results in "1, 2"
+    | }

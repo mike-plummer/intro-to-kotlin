@@ -1,0 +1,21 @@
+h3 Operator Overloading
+
+p Declare a function using the 'operator' keyword
+
+pre
+  code.lang-kotlin
+    | class GasTank(val capacity: Long) {
+    |
+    |     // Using 'operator' keyword in combination with preset
+    |     // function names overrides the operator
+    |     operator fun plus(other: GasTank): Long {
+    |         return capacity + other.capacity
+    |     }
+    | }
+    |
+    | val a: GasTank = GasTank(5)
+    | val b: GasTank = GasTank(10)
+    |
+    | fun main(args: Array<String>) {
+    |     println(a + b)  // Prints '15'
+    | }
