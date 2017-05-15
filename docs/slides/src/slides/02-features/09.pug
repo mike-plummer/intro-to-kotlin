@@ -4,17 +4,29 @@ pre
   code.lang-kotlin
     | val unknownValue: Any = listOf("A", "B", "C")
     |
-    | unknownValue is Any    // true
-    |
-    | unknownValue is List    // true
-    |
-    | val unsafeCast = unknownValue as String    // Unsafe cast, throws ClassCast error
-    |
-    | val safeCast = unknownValue as? String    // Safe cast, results in 'null'
-    |
-    | if (unknownValue is List) {
-    |     unknownValue.size()    // We didn't have to re-cast like in Java!
-    | }
-    |
-    | val valueAsList = unknownValue as? List
-    | valueAsList.?size()    //  Kotlin knows this can only be a List or null
+    .fragment
+      |
+      | unknownValue is Any    // true
+      |
+    .fragment
+      |
+      | unknownValue is List    // true
+      |
+    .fragment
+      |
+      | val unsafeCast = unknownValue as String    // Unsafe cast, throws ClassCast error
+      |
+    .fragment
+      |
+      | val safeCast = unknownValue as? String    // Safe cast, results in 'null'
+      |
+    .fragment
+      |
+      | if (unknownValue is List) {
+      |     unknownValue.size()    // We didn't have to re-cast like in Java!
+      | }
+      |
+    .fragment
+      |
+      | val valueAsList = unknownValue as? List
+      | valueAsList.?size()    //  Kotlin knows this can only be a List or null

@@ -11,16 +11,18 @@ pre.fragment
 
 pre.fragment
   code.lang-kotlin
-    | fun main(args: Array<String>) {
-    |     val dto = MyDTO(1)          // Since there are default params I can
-    |                                 // decide to only override the first one
+    | val dto = MyDTO(1)          // Since there are default params I can
+    |                             // decide to only override the first one
     |
-    |     println( dto.toString() )   // MyDTO(readOnlyValue=1, mutableValue=2)
+    | println( dto.toString() )   // MyDTO(readOnlyValue=1, mutableValue=2)
     |
-    |     val copy: MyDTO = dto.copy()
-    |     println( dto === copy )     // false, not referentially equal
-    |     println( dto == copy )      // true, using generated 'equals' method
-    |
-    |     val (first, second) = dto   // Destructuring, but not quite as nice as ES2016
-    |     println( "$first, $second") // Template strings! Results in "1, 2"
-    | }
+    .fragment
+      |
+      | val copy: MyDTO = dto.copy()
+      | println( dto === copy )     // false, not referentially equal
+      | println( dto == copy )      // true, using generated 'equals' method
+      |
+    .fragment
+      |
+      | val (first, second) = dto   // Destructuring, but not quite as nice as ES2016
+      | println( "$first, $second") // Template strings! Results in "1, 2"

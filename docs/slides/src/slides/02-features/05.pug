@@ -5,21 +5,31 @@ pre
     | // Declare a mutable null value
     | var value: String? = null
     |
-    | value.length        // Rejected by compiler, value can be null!
-    |
-    | if (value != null) {
-    |     value.length    // This still isn't okay, value could have changed really fast
-    | }
-    |
-    | value?.length        // This works, results in 'length' or 'null'
-    |
-    | value?.length ?: "Default value"    // Elvis operator! 'length' or 'Default value'
-    |
-    |
-    |
-    | // Declare an immutable null value
-    | val value: String? = null
-    |
-    | if (value != null) {
-    |     value.length        // Okay since the value couldn't have changed since check
-    | }
+    .fragment
+      |
+      | value.length        // Rejected by compiler, value can be null!
+      |
+    .fragment
+      |
+      | if (value != null) {
+      |     value.length    // This still isn't okay, value could have changed really fast
+      | }
+      |
+    .fragment
+      |
+      | value?.length        // This works, results in 'length' or 'null'
+      |
+    .fragment
+      |
+      | value?.length ?: "Default value"    // Elvis operator! 'length' or 'Default value'
+      |
+    .fragment
+      |
+      | // Declare an immutable null value
+      | val value: String? = null
+      |
+    .fragment
+      |
+      | if (value != null) {
+      |     value.length        // Okay since the value couldn't have changed since check
+      | }

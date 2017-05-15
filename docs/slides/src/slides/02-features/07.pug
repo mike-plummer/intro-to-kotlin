@@ -18,6 +18,8 @@ pre.fragment
     | val a: GasTank = GasTank(5)
     | val b: GasTank = GasTank(10)
     |
-    | fun main(args: Array<String>) {
-    |     println(a + b)  // Prints '15'
-    | }
+    .fragment
+      |
+      | fun main(args: Array&lt;String&gt;) {
+      |     println(a + b)  // Prints '15'
+      | }

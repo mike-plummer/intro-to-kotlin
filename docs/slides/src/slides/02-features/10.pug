@@ -6,12 +6,12 @@ div.fragment
 
   pre
     code.lang-kotlin
-      | typealias KeyValuesMap = Map<String, List<String>>
+      | typealias KeyValuesMap = Map&lt;String, List&lt;String&gt;&gt;
       |
-      | val myMap = mapOf<String, List<String>>()
-      | val notMyMap = mapOf<Int, List<Long>>()
+      | val myMap = mapOf&lt;String, List&lt;String&gt;&gt;()
+      | val notMyMap = mapOf&lt;Int, List&lt;Long&gt;&gt;()
       |
-      | fun main(args: Array<String>) {
+      | fun main(args: Array&lt;String&gt;) {
       |     println(myMap is Map)              // true
       |     println(myMap is KeyValuesMap)     // true
       |     println(notMyMap is KeyValuesMap)  // Error due to type erasure
