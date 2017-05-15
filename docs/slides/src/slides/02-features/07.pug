@@ -1,8 +1,8 @@
-h3 Operator Overloading
+h2 Operator Overloading
 
 p Declare a function using the 'operator' keyword
 
-pre
+pre.fragment
   code.lang-kotlin
     | class GasTank(val capacity: Long) {
     |
@@ -12,7 +12,9 @@ pre
     |         return capacity + other.capacity
     |     }
     | }
-    |
+
+pre.fragment
+  code.lang-kotlin
     | val a: GasTank = GasTank(5)
     | val b: GasTank = GasTank(10)
     |

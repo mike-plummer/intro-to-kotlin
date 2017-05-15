@@ -1,14 +1,16 @@
-h3 Data Classes
+h2 Data Classes
 
 p Auto-generate equals, hashCode, toString, copy constructor, and destructuring support
 
-pre
+pre.fragment
   code.lang-kotlin
     | // Declare a Data class and supply default args
     | data class MyDTO(
     |         val first: Long = 0,
     |         val second: Long = 2)
-    |
+
+pre.fragment
+  code.lang-kotlin
     | fun main(args: Array<String>) {
     |     val dto = MyDTO(1)          // Since there are default params I can
     |                                 // decide to only override the first one
