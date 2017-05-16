@@ -31,6 +31,8 @@ export class SlideDeckComponent implements OnInit {
       (window as any).Reveal = Reveal;
 
       Reveal.initialize({
+        width: '95%',
+        height: '100%',
         history: true,
         margin: 0,
         dependencies: [
