@@ -6,7 +6,11 @@ pre
     |                         val description: String,
     |                         val address: String)
     |
-    | val person = Person("Bobby", "Kid!", "123 Fake St.")
-    |
-    | val (first, second, third) = person
-    | // first = "Bobby", second = "Kid!", third = "123 Fake St."
+    .fragment
+      |
+      | val person = Person("Bobby", "Kid!", "123 Fake St.")
+      |
+    .fragment
+      |
+      | val (first, second, third) = person
+      | // first = "Bobby", second = "Kid!", third = "123 Fake St."

@@ -29,8 +29,8 @@ pre
     .fragment
       |
       | val valueAsList: List? = unknownValue as? List
-      | valueAsList.?size()                       //  Kotlin knows this can only be a List or null
+      | valueAsList.?size()                       //  Kotlin knows this is a List or null
 
-div.fragment
+div.centered.fragment
   video(autoplay, loop, data-ignore)
     source(src="../../../resources/images/chuck-norris.mp4", type="video/mp4")
