@@ -17,7 +17,10 @@ To view the slides you'll need Node & NPM/YARN.
 
 ### Code Examples
 
-Not yet done.
+Code examples are broken out in the following branches:
+
+* **master**: Base scaffolding for the project (dependencies and such)
+* **stage/implemented**: Implementation of example project
 
 ## Licensing
 
