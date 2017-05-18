@@ -6,15 +6,15 @@ pre
     |
     .fragment
       |
-      | unknownValue is Any    // true
+      | unknownValue is Any                       // true
       |
     .fragment
       |
-      | unknownValue is List    // true
+      | unknownValue is List                      // true
       |
     .fragment
       |
-      | val unsafeCast = unknownValue as String    // Unsafe cast, throws ClassCast error
+      | val unsafeCast = unknownValue as String   // Unsafe cast, throws ClassCast error
       |
     .fragment
       |
@@ -23,13 +23,13 @@ pre
     .fragment
       |
       | if (unknownValue is List) {
-      |     unknownValue.size()    // We didn't have to re-cast like in Java!
+      |     unknownValue.size()                   // We didn't have to re-cast like in Java!
       | }
       |
     .fragment
       |
-      | val valueAsList = unknownValue as? List
-      | valueAsList.?size()    //  Kotlin knows this can only be a List or null
+      | val valueAsList: List? = unknownValue as? List
+      | valueAsList.?size()                       //  Kotlin knows this can only be a List or null
 
 div.fragment
   video(autoplay, loop, data-ignore)

@@ -1,0 +1,21 @@
+h2 Type Aliases
+
+pre
+  code.lang-kotlin
+    | class CurrentContextManagementInterface {}
+    |
+    | val valueA: CurrentContextManagementInterface = ..
+    | val valueB: Any = ..
+    |
+    .fragment
+      |
+      | valueA is CurrentContextManagementInterface       // true
+    .fragment
+      |
+      | typealias CtxMgr = CurrentContextManagementInterface
+    .fragment
+      |
+      | valueA is CtxMgr                                  // true
+      |
+    .fragment
+      | valueB is CtxMgr                                  // false
