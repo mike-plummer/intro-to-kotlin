@@ -1,16 +1,35 @@
-h2 Extension
+h2 Null Safety
 
-p Add a method to ALL instances of a given class without building a wrapper class
-
-pre.fragment
+pre
   code.lang-kotlin
-    | fun String.sayHi() {
-    |     println("Hey there, ${this}!")
-    | }
-
-pre.fragment
-  code.lang-kotlin
-    | fun main(args: Array&lt;String&gt;) {
-    |     // Prints "Hey there, kiddos!"
-    |     "kiddos".sayHi()
-    | }
+    | // Declare a mutable null value
+    | var value: String? = null
+    |
+    .fragment
+      |
+      | value.length        // Rejected by compiler, value can be null!
+      |
+    .fragment
+      |
+      | if (value != null) {
+      |     value.length    // This still isn't okay, value could have changed really fast
+      | }
+      |
+    .fragment
+      |
+      | value?.length        // This works, results in 'length' or 'null'
+      |
+    .fragment
+      |
+      | value?.length ?: "Default value"    // Elvis operator! 'length' or 'Default value'
+      |
+    .fragment
+      |
+      | // Declare an immutable null value
+      | val value: String? = null
+      |
+    .fragment
+      |
+      | if (value != null) {
+      |     value.length        // Okay since the value couldn't have changed since check
+      | }

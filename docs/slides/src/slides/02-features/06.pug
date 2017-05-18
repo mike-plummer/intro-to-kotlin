@@ -1,28 +1,24 @@
-h2 Data Classes
-
-p Auto-generate equals, hashCode, toString, copy constructor, and destructuring support
-
-pre.fragment
-  code.lang-kotlin
-    | // Declare a Data class and supply default args
-    | data class MyDTO(
-    |         val first: Long = 0,
-    |         val second: Long = 2)
-
-pre.fragment
-  code.lang-kotlin
-    | val dto = MyDTO(1)          // Since there are default params I can
-    |                             // decide to only override the first one
-    |
-    | println( dto.toString() )   // MyDTO(readOnlyValue=1, mutableValue=2)
-    |
-    .fragment
+h2 Important Syntax Changes
+  h4.fragment No 'new' keyword
+  pre.fragment
+    code.lang-kotlin
+      | val myList = ArrayList()
+  h4.fragment Class Declarations
+  pre.fragment
+    code.lang-kotlin
+      | // Primary constructor defined inline with class definition
+      | class MyClass(val a: String,  // Class-level immutable
+      |               var b: String,  // Class-level mutable
+      |               c: String) {   // Method-scope variable
+      .fragment
+        |   constructor(d, e, f) {} // Secondary constructors can be defined as well
+      .fragment
+        |   var a, var b  // Can define class-level variables outside primary constructor
+      | }
+  h4.fragment Default Arguments
+  pre.fragment
+    code.lang-kotlin
+      | class MyClass(val arg1: String = "ABC",
+      |               val arg2: String = "XYZ")
       |
-      | val copy: MyDTO = dto.copy()
-      | println( dto === copy )     // false, not referentially equal
-      | println( dto == copy )      // true, using generated 'equals' method
-      |
-    .fragment
-      |
-      | val (first, second) = dto   // Destructuring, but not quite as nice as ES2016
-      | println( "$first, $second") // Template strings! Results in "1, 2"
+      | val instance = MyClass(arg2 = "Captain Planet")
