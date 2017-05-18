@@ -1,4 +1,4 @@
-package com.objectpartners.plummer.cashregister;
+package com.objectpartners.plummer.kotlin;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration
@@ -7,14 +7,14 @@ import springfox.documentation.spi.DocumentationType
 import springfox.documentation.spring.web.plugins.Docket
 import springfox.documentation.swagger2.annotations.EnableSwagger2
 
-@EnableSwagger2
-@Configuration
+@springfox.documentation.swagger2.annotations.EnableSwagger2
+@org.springframework.context.annotation.Configuration
 open class DocumentationConfiguration {
 
-    @Bean
-    open fun docket(): Docket {
-        return Docket(DocumentationType.SWAGGER_2)
-                .apiInfo((ApiInfoBuilder()
+    @org.springframework.context.annotation.Bean
+    open fun docket(): springfox.documentation.spring.web.plugins.Docket {
+        return springfox.documentation.spring.web.plugins.Docket(springfox.documentation.spi.DocumentationType.SWAGGER_2)
+                .apiInfo((springfox.documentation.builders.ApiInfoBuilder()
                         .description("Kotlin example app")
                         .title("Intro to Kotlin")
                         .license("MIT")
