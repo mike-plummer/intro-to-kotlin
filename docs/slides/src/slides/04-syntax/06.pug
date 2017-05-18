@@ -1,0 +1,13 @@
+h2 Object vs. Any
+
+h4.fragment Java's 'Object' type is called 'any' in Kotlin
+pre.fragment
+  code.lang-kotlin
+    | val unknownNonNull: any = ...
+    | val unknownNullable: any? = ...
+
+h4.fragment 'Object' is a special construct in Kotlin
+pre.fragment
+  code.lang-kotlin
+    | object { .. }  // Singleton
+    | companion object { .. }  // Static singleton

@@ -1,0 +1,17 @@
+h2 Class Declarations
+
+pre.fragment
+  code.lang-kotlin
+    | class Book {
+    |   var name, var author
+    |   constructor(name, author) {
+    |     this@Book.name = name
+    |     this@Book.author = author
+    |   }
+    | }
+
+h3.fragment Primary Constructor
+pre.fragment
+  code.lang-kotlin
+    | class MyClass(var name: String,
+    |               var author: String)
