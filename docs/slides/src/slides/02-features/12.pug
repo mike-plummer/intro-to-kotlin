@@ -1,0 +1,16 @@
+h2 Extension
+
+p Add a method to ALL instances of a given class without building a wrapper class
+
+pre.fragment
+  code.lang-kotlin
+    | fun String.sayHi() {
+    |     println("Hey there, ${this}!")
+    | }
+
+pre.fragment
+  code.lang-kotlin
+    | fun main(args: Array&lt;String&gt;) {
+    |     // Prints "Hey there, kiddos!"
+    |     "kiddos".sayHi()
+    | }

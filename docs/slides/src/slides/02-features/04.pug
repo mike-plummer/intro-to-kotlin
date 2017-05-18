@@ -1,11 +1,20 @@
 h2 Variable Declarations
 
-pre
-  code.lang-kotlin
-    | // By default a value cannot be null
-    | val readOnlyValue: String = "Read-only, non-nullable"
-    | var mutableValue: String = "Mutable, non-nullable"
-    |
-    | // Adding a question mark after the type declaration means 'this can be null'
-    | val nullableReadOnlyValue: String? = "Read-only, nullable"
-    | var nullableMutableValue: String? = "Mutable and nullable"
+div.fragment(data-fragment-index="0")
+  p val = Read-only value
+  p var = Mutable variable
+
+br
+
+div
+  table
+    tr(style="font-family: monospace;")
+      td.fragment(data-fragment-index="1", style="text-align: right;") var
+      td.fragment(data-fragment-index="2") myVariable:
+      td.fragment(data-fragment-index="3") Array&lt;String&gt;
+      td.fragment(data-fragment-index="4") ?
+    tr
+      td.fragment(data-fragment-index="1") Mutability
+      td.fragment(data-fragment-index="2") Name
+      td.fragment(data-fragment-index="3") Type
+      td.fragment(data-fragment-index="4") Nullability

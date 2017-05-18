@@ -1,29 +1,28 @@
-div.fragment
-  h4 No Checked Exceptions
+h2 Data Classes
 
-div.fragment
-  h4 Type Aliases
+p Auto-generate equals, hashCode, toString, copy constructor, and destructuring support
 
-  pre
-    code.lang-kotlin
-      | typealias KeyValuesMap = Map&lt;String, List&lt;String&gt;&gt;
-      |
-      | val myMap = mapOf&lt;String, List&lt;String&gt;&gt;()
-      | val notMyMap = mapOf&lt;Int, List&lt;Long&gt;&gt;()
-      |
-      | fun main(args: Array&lt;String&gt;) {
-      |     println(myMap is Map)              // true
-      |     println(myMap is KeyValuesMap)     // true
-      |     println(notMyMap is KeyValuesMap)  // Error due to type erasure
-      | }
+pre.fragment
+  code.lang-kotlin
+    | // Declare a Data class and supply default args
+    | data class MyDTO(
+    |         val first: Long = 0,
+    |         val second: Long = 2)
 
-div.fragment
-  h4 Destructuring
-  pre
-    code.lang-kotlin
-      | data class ComplexClass(val name: String, val description: String, val address: String)
+pre.fragment
+  code.lang-kotlin
+    | val dto = MyDTO(1)          // Since there are default params I can
+    |                             // decide to only override the first one
+    |
+    | println( dto.toString() )   // MyDTO(readOnlyValue=1, mutableValue=2)
+    |
+    .fragment
       |
-      | val myComplexObject = ComplexClass("A", "B", "C")
+      | val copy: MyDTO = dto.copy()
+      | println( dto === copy )     // false, not referentially equal
+      | println( dto == copy )      // true, using generated 'equals' method
       |
-      | val (first, second, third) = myComplexObject
-      | // first = "A", second = "B", third = "C"
+    .fragment
+      |
+      | val (first, second) = dto   // Destructuring, but not quite as nice as ES2016
+      | println( "$first, $second") // Template strings! Results in "1, 2"

@@ -1,32 +1,8 @@
-h2 Smart Casts & Inference
-
-pre
-  code.lang-kotlin
-    | val unknownValue: Any = listOf("A", "B", "C")
-    |
-    .fragment
+h2 Ranges
+  pre.fragment
+    code.lang-kotlin
+      | val 1..10 step 2 // 2 4 6 8 10
       |
-      | unknownValue is Any    // true
+      | val 1 until 10 // Array of values from 1 to 9 (Excludes 10)
       |
-    .fragment
-      |
-      | unknownValue is List    // true
-      |
-    .fragment
-      |
-      | val unsafeCast = unknownValue as String    // Unsafe cast, throws ClassCast error
-      |
-    .fragment
-      |
-      | val safeCast = unknownValue as? String    // Safe cast, results in 'null'
-      |
-    .fragment
-      |
-      | if (unknownValue is List) {
-      |     unknownValue.size()    // We didn't have to re-cast like in Java!
-      | }
-      |
-    .fragment
-      |
-      | val valueAsList = unknownValue as? List
-      | valueAsList.?size()    //  Kotlin knows this can only be a List or null
+      | val range = 10 downTo 1   // Descending array of values

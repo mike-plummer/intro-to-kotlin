@@ -1,6 +1,29 @@
-span
-  h3.fragment Oh yeah...
-  h3.fragment it also natively compiles to JavaScript.
+h2 Operator Overloading
 
-video.fragment(autoplay, loop, data-ignore, width="375", height="300")
-  source(src="../../../resources/images/much_excite.mp4", type="video/mp4")
+p Declare a function using the 'operator' keyword
+
+pre.fragment
+  code.lang-kotlin
+    | class GasTank(val capacity: Long) {
+    |
+    |     // Using 'operator' keyword in combination with preset
+    |     // function names overrides the operator
+    |     operator fun plus(other: GasTank): Long {
+    |         return capacity + other.capacity
+    |     }
+    | }
+
+pre.fragment
+  code.lang-kotlin
+    | val a: GasTank = GasTank(5)
+    | val b: GasTank = GasTank(10)
+    |
+    .fragment
+      |
+      | fun main(args: Array&lt;String&gt;) {
+      |     println(a + b)  // Prints '15'
+      | }
+
+div.fragment
+  video.fill.centered(autoplay, loop, data-ignore)
+    source(src="../../../resources/images/awesome.mp4", type="video/mp4")

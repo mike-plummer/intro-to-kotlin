@@ -1,35 +1,11 @@
-h2 Null Safety
+h2 Variable Declarations
 
 pre
   code.lang-kotlin
-    | // Declare a mutable null value
-    | var value: String? = null
+    | // By default a value cannot be null
+    | val readOnlyValue: String = "Read-only, non-nullable"
+    | var mutableValue: String = "Mutable, non-nullable"
     |
-    .fragment
-      |
-      | value.length        // Rejected by compiler, value can be null!
-      |
-    .fragment
-      |
-      | if (value != null) {
-      |     value.length    // This still isn't okay, value could have changed really fast
-      | }
-      |
-    .fragment
-      |
-      | value?.length        // This works, results in 'length' or 'null'
-      |
-    .fragment
-      |
-      | value?.length ?: "Default value"    // Elvis operator! 'length' or 'Default value'
-      |
-    .fragment
-      |
-      | // Declare an immutable null value
-      | val value: String? = null
-      |
-    .fragment
-      |
-      | if (value != null) {
-      |     value.length        // Okay since the value couldn't have changed since check
-      | }
+    | // Adding a question mark after the type declaration means 'this can be null'
+    | val nullableReadOnlyValue: String? = "Read-only, nullable"
+    | var nullableMutableValue: String? = "Mutable and nullable"
