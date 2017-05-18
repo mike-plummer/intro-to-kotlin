@@ -5,7 +5,6 @@ pre
     | class CurrentContextManagementInterface {}
     |
     | val valueA: CurrentContextManagementInterface = ..
-    | val valueB: Any = ..
     |
     .fragment
       |
@@ -17,5 +16,3 @@ pre
       |
       | valueA is CtxMgr                                  // true
       |
-    .fragment
-      | valueB is CtxMgr                                  // false
