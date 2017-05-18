@@ -4,25 +4,32 @@ h5 Auto-generate equals, hashCode, toString, copy constructor, and destructuring
 
 pre.fragment
   code.lang-kotlin
-    | // Declare a Data class and supply default args
+    | // Declare a Data class
     | data class MyDTO(
-    |         val first: Long = 0,
-    |         val second: Long = 2)
+    |         val first: Long,
+    |         val second: Long)
 
 pre.fragment
   code.lang-kotlin
-    | val dto = MyDTO(1)          // Since there are default params I can
-    |                             // decide to only override the first one
-    |
-    | println( dto.toString() )   // MyDTO(readOnlyValue=1, mutableValue=2)
+    | val dto = MyDTO(1, 2)           // Since there are default params I can
+    |                                 // decide to only override the first one
     |
     .fragment
       |
-      | val copy: MyDTO = dto.copy()
-      | println( dto === copy )     // false, not referentially equal
-      | println( dto == copy )      // true, using generated 'equals' method
+      | println( dto.toString() )     // MyDTO(readOnlyValue=1, mutableValue=2)
       |
     .fragment
       |
-      | val (first, second) = dto   // Destructuring, but not quite as nice as ES2016
+      | val copy: MyDTO = dto.copy()  // Build duplicate of 'dto'
+    .fragment
+      |
+      | println( dto === copy )       // false, not referentially equal
+      |
+    .fragment
+      |
+      | println( dto == copy )        // true, using generated 'equals' method
+      |
+    .fragment
+      |
+      | val (first, second) = dto   // Destructuring (not quite as nice as ES2016)
       | println( "$first, $second") // Template strings! Results in "1, 2"

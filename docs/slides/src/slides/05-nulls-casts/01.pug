@@ -1,35 +1,36 @@
 h2 Null Safety
 
+h4 If something can be null you *have* to guard against it!
+
 pre
   code.lang-kotlin
-    | // Declare a mutable null value
-    | var value: String? = null
+    | var value: String? = null             // Declare a mutable null value
     |
     .fragment
       |
-      | value.length        // Rejected by compiler, value can be null!
+      | value.length                        // Rejected by compiler, value can be null!
       |
     .fragment
       |
       | if (value != null) {
-      |     value.length    // This still isn't okay, value could have changed really fast
+      |     value.length                    // This still isn't okay, value could have changed really fast
       | }
       |
     .fragment
       |
-      | value?.length        // This works, results in 'length' or 'null'
+      | value?.length                       // Null-safe traversal, results in 'length' or 'null'
       |
     .fragment
       |
-      | value?.length ?: "Default value"    // Elvis operator! 'length' or 'Default value'
+      | value?.length ?: "Default value"    // Elvis operator! Results in length or 'Default value'
       |
-    .fragment
-      |
-      | // Declare an immutable null value
-      | val value: String? = null
-      |
+
+pre.fragment
+  code.lang-kotlin
+    | val value: String? = null             // Declare an immutable null value
+    |
     .fragment
       |
       | if (value != null) {
-      |     value.length        // Okay since the value couldn't have changed since check
+      |     value.length                      // Okay since the value couldn't have changed since check
       | }

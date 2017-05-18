@@ -1,0 +1,12 @@
+h2 Destructuring
+
+pre
+  code.lang-kotlin
+    | data class Person(val name: String,
+    |                         val description: String,
+    |                         val address: String)
+    |
+    | val person = Person("Bobby", "Kid!", "123 Fake St.")
+    |
+    | val (first, second, third) = person
+    | // first = "Bobby", second = "Kid!", third = "123 Fake St."
