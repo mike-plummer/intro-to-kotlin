@@ -12,11 +12,16 @@ buildscript {
 
 apply plugin: 'kotlin'
 
+sourceSets {
+    main.kotlin.srcDirs += "${project(':domain').projectDir.path}/src/main/kotlin"
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    compile project(':domain')
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion"
 
     compile "org.springframework.boot:spring-boot-starter-parent:$springbootVersion"

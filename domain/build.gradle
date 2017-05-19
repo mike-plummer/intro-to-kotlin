@@ -17,5 +17,5 @@ repositories {
 }
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlinVersion"
+    compileOnly "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlinVersion"
 }
