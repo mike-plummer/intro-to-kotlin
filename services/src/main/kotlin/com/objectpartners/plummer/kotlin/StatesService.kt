@@ -1,7 +1,9 @@
 package com.objectpartners.plummer.kotlin
 
+import com.objectpartners.plummer.kotlin.domain.StateResource
+
 interface StatesService {
-    fun getAll(): Collection<com.objectpartners.plummer.cashregister.State>
-    fun getMatching(regex: String?): Collection<com.objectpartners.plummer.cashregister.State>
-    fun getByName(name: String?): com.objectpartners.plummer.cashregister.State?
+    fun getAll(): Collection<StateResource>
+    fun getMatching(pattern: String?): Collection<StateResource>
+    fun getByName(nameToFind: String?): StateResource?
 }

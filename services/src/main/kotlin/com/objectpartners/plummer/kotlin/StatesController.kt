@@ -1,23 +1,26 @@
 package com.objectpartners.plummer.kotlin
 
-@org.springframework.web.bind.annotation.RestController
-@org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.web.bind.annotation.*
+import com.objectpartners.plummer.kotlin.domain.StateResource
+
+@RestController
+@RequestMapping("/states")
 open class StatesController {
 
-    @org.springframework.beans.factory.annotation.Autowired
-    lateinit var statesService: StatesService;
+    @Autowired
+    lateinit var service: StatesService
 
-    @org.springframework.web.bind.annotation.GetMapping
-    fun get(@org.springframework.web.bind.annotation.RequestParam(value = "regex", required = false) regex: String?): Collection<State> {
-        if (regex != null) {
-            return statesService.getMatching(regex)
+    @GetMapping
+    fun get(@RequestParam(value = "pattern", required = false) pattern: String?): Collection<StateResource> {
+        if (pattern != null) {
+            return service.getMatching(pattern)
         }
-
-        return statesService.getAll()
+        return service.getAll()
     }
 
-    @org.springframework.web.bind.annotation.GetMapping("{name}")
-    fun getByName(@org.springframework.web.bind.annotation.PathVariable("name") name: String?): State? {
-        return statesService.getByName(name)
+    @GetMapping("{name}")
+    fun getByName(@PathVariable("name") name: String?): StateResource? {
+        return service.getByName(name)
     }
 }
