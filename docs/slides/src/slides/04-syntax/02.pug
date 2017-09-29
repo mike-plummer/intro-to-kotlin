@@ -5,4 +5,10 @@ pre.fragment
     | class Book(val name: String = "Hitch Hiker's Guide",
     |            val author: String? = "D. Adams")
     |
-    | val myBook = Book(author = "Adams, Douglas")
+    .fragment
+      |
+      | val myBook = Book()
+    .fragment
+      | val myBook = Book("Nancy Drew", "Carolyn Keene")
+    .fragment
+      | val myBook = Book(author = "Joe Bobberson")
