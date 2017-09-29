@@ -6,8 +6,8 @@ pre.fragment
   code.lang-kotlin
     | // Declare a Data class
     | data class MyDTO(
-    |         val first: Long,
-    |         val second: Long)
+    |         val alpha: Long,
+    |         val beta: Long)
 
 pre.fragment
   code.lang-kotlin
@@ -15,7 +15,7 @@ pre.fragment
     |
     .fragment
       |
-      | println( dto.toString() )     // MyDTO(readOnlyValue=1, mutableValue=2)
+      | println( dto.toString() )     // MyDTO(alpha=1, beta=2)
       |
     .fragment
       |
@@ -30,4 +30,4 @@ pre.fragment
       |
     .fragment
       |
-      | val (first, second) = dto   // Destructuring (not quite as nice as ES2016)
+      | val (shazam, kapowza) = dto   // Destructuring (not quite as nice as ES2016)

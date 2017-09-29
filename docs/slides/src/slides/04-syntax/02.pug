@@ -1,21 +1,8 @@
-h2 Class Declarations
+h2 Default Arguments
 
 pre.fragment
   code.lang-kotlin
-    | class Book {
-    |     var name: String
-    |     var author: String?
+    | class Book(val name: String = "Hitch Hiker's Guide",
+    |            val author: String? = "D. Adams")
     |
-    |     constructor(name: String, author: String?) {
-    |         this.name = name
-    |         this.author = author
-    |     }
-    | }
-
-h3.fragment Primary Constructor
-pre.fragment
-  code.lang-kotlin
-    | class Book(var name: String,
-    |            var author: String)
-
-h4.fragment Final by default, add 'open' to allow extension
+    | val myBook = Book(author = "Adams, Douglas")

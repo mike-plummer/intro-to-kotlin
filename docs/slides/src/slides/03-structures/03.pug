@@ -1,0 +1,21 @@
+h2 Class Declarations
+
+pre.fragment
+  code.lang-kotlin
+    | class Book {
+    |     var name: String
+    |     var author: String?
+    |
+    |     constructor(name: String, author: String?) {
+    |         this.name = name
+    |         this.author = author
+    |     }
+    | }
+
+h3.fragment Primary Constructor
+pre.fragment
+  code.lang-kotlin
+    | class Book(var name: String,
+    |            var author: String?)
+
+h4.fragment Final by default, add 'open' to allow extension
