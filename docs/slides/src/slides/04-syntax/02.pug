@@ -2,13 +2,15 @@ h2 Default Arguments
 
 pre.fragment
   code.lang-kotlin
-    | class Book(val name: String = "Hitch Hiker's Guide",
-    |            val author: String? = "D. Adams")
+    | fun CoffeeMug(val contents: String? = "Coffee",
+    |               val volume: Double = 8.0)
     |
     .fragment
       |
-      | val myBook = Book()
+      | val mug = CoffeeMug()   // contents = "Coffee", volume = 8.0
     .fragment
-      | val myBook = Book("Nancy Drew", "Carolyn Keene")
+      |
+      | val mug = CoffeeMug("Tea", 12.0)  // contents = "Tea", volume = 12.0
     .fragment
-      | val myBook = Book(author = "Joe Bobberson")
+      |
+      | val mug = CoffeeMug(volume = 32.0)  // contents = "Coffee", volume = 32.0

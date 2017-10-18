@@ -1,22 +1,20 @@
-h2 Class Declarations
+h2 Variable Declarations
 
-pre.fragment
-  code.lang-kotlin
-    | class Book {
-    |     var name: String
-    |     var author: String?
-    |
-    |     constructor(name: String, author: String?) {
-    |         this.name = name
-    |         this.author = author
-    |     }
-    | }
+div.fragment(data-fragment-index="0")
+  p val = Read-only value
+  p var = Mutable variable
 
-h3.fragment Primary Constructor
-pre.fragment
-  code.lang-kotlin
-    | class Book(var name: String,
-    |            var author: String?)
+br
 
-h4.fragment Final by default, add 'open' to allow extension
-h4.fragment Interfaces, Abstract, and Enums
+div
+  table
+    tr(style="font-family: monospace;")
+      td.fragment(data-fragment-index="1", style="text-align: right;") var
+      td.fragment(data-fragment-index="2") myVariable:
+      td.fragment(data-fragment-index="3") Array&lt;String&gt;
+      td.fragment(data-fragment-index="4") ?
+    tr
+      td.fragment(data-fragment-index="1") Mutability
+      td.fragment(data-fragment-index="2") Name
+      td.fragment(data-fragment-index="3") Type
+      td.fragment(data-fragment-index="4") Nullability

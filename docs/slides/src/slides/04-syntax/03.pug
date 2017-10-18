@@ -1,6 +1,13 @@
-h2 No 'static' keyword
+h2 Object vs. Any
 
-div.fragment
-  h4 Functions can be declared at 'package' scope
-  h4 (No more Utility Classes!)
-h4.fragment Objects gain static behaviors with 'companion objects'
+h4.fragment Java's 'Object' type is called 'Any' in Kotlin
+pre.fragment
+  code.lang-kotlin
+    | val unknownNonNull: Any = ...
+    | val unknownNullable: Any? = ...
+
+h4.fragment 'Object' is a special construct in Kotlin
+pre.fragment
+  code.lang-kotlin
+    | object { .. }  // Ad-hoc object, init at declaration
+    | companion object { .. }  // Singleton, init on first reference

@@ -1,20 +1,19 @@
-h2 Function Declarations
+h2  Access modifiers
 
 div
   table
-    tr(style="font-family: monospace;")
-      td.fragment(data-fragment-index="1", style="text-align: right;") fun
-      td.fragment(data-fragment-index="2") add
-      td.fragment(data-fragment-index="3") (a: Int, b: Int)
-      td.fragment(data-fragment-index="4") : Int
-    tr
-      td.fragment(data-fragment-index="1") Keyword
-      td.fragment(data-fragment-index="2") Name
-      td.fragment(data-fragment-index="3") Parameters
-      td.fragment(data-fragment-index="4") Return Type
+    tr.fragment
+      td(style="font-family: monospace;") public
+      td Just like Java, default
+    tr.fragment
+      td(style="font-family: monospace;") private
+      td Just like Java
+    tr.fragment
+      td(style="font-family: monospace;") protected
+      td Java minus package visibility
+    tr.fragment
+      td(style="font-family: monospace;") internal
+      td Public within module
 
-pre.fragment
-  code.lang-kotlin
-    | fun add(a: Int, b: Int): Int {
-    |     return a + b;
-    | }
+br
+p.fragment Module = IntelliJ project module, Gradle source-set, Maven project
