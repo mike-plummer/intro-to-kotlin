@@ -4,24 +4,24 @@ p Declare a function using the 'operator' keyword
 
 pre.fragment
   code.lang-kotlin
-    | class GasTank(val capacity: Long) {
+    | class CreditCard(val creditLimit: Long) {
     |
     |     // Using 'operator' keyword in combination with preset
     |     // function names overrides the operator
-    |     operator fun plus(other: GasTank): Long {
-    |         return capacity + other.capacity
+    |     operator fun plus(other: CreditCard): Long {
+    |         return creditLimit + other.creditLimit
     |     }
     | }
 
 pre.fragment
   code.lang-kotlin
-    | val a: GasTank = GasTank(5)
-    | val b: GasTank = GasTank(10)
+    | val mastercard = CreditCard(5000)
+    | val visa = CreditCard(10000)
     |
     .fragment
       |
       | fun main(args: Array&lt;String&gt;) {
-      |     println(a + b)  // Prints '15'
+      |     println(mastercard + visa)  // Prints '15000'
       | }
 
 div.fragment
